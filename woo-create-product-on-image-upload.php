@@ -26,7 +26,7 @@ class wooCreateImageOnUpload {
 	 * @since  1.0.0
 	 */
     public function __construct() {
-		add_action('plugins_loaded', array($this, 'hideOrderAddress'));
+		add_action('plugins_loaded', array($this, 'createProductOnImageUpload'));
     }
     
     /**
@@ -35,7 +35,7 @@ class wooCreateImageOnUpload {
      * @access public 
 	 * @since  1.0.0
 	 */
-    public static function hideOrderAddress() {
+    public static function createProductOnImageUpload() {
 		$user = wp_get_current_user();
 		if(isset($user->roles[0]) && $user->roles[0] == 'vendor') {
 			add_action('admin_enqueue_scripts', array(get_called_class(), 'registerScripts'));
@@ -49,8 +49,8 @@ class wooCreateImageOnUpload {
 	 * @since  1.0.0
 	 */
     public static function registerScripts() {
-		wp_register_style('woo-hide-order-address-details', plugin_dir_url(__FILE__).'css/woo-hide-order-address-details.css');
-		wp_enqueue_style('woo-hide-order-address-details');
+		wp_register_style('woo-create-product-on-image-upload', plugin_dir_url(__FILE__).'css/woo-create-product-on-image-upload.css');
+		wp_enqueue_style('woo-create-product-on-image-upload');
     }
 
     /**
