@@ -26,35 +26,29 @@ class wooCreateProductOnImageUpload {
 	 * @since  1.0.0
 	 */
     public function __construct() {
-		add_action('plugins_loaded', array($this, 'createProductOnImageUpload'));
+		add_action('add_attachment', array($this, 'createProductOnImageUpload'), 10, 1);
     }
-    
-    /**
-	 * Load only when pluggable.php is ready
-	 *
-     * @access public 
-	 * @since  1.0.0
-	 */
-    public static function createProductOnImageUpload() {
-		add_filter('wp_handle_upload', 'customUploadFilter');
-	}
 	
 	/**
-	 * Load only when pluggable.php is ready
 	 *
      * @access public 
 	 * @since  1.0.0
 	 */
-    public static function customUploadFilter($file) {
+    public static function createProductOnImageUpload($attachment_id) {
+		//Prepare Product
+		$attachment = get_post($attachment_id);
 		$product = array(
-			'post_title' => $file['name'],
+			'post_title' => $attachment->post_title,
 			'post_content' => '',
 			'post_status' => 'publish',
-			'post_type' => "product",
+			'post_type' => 'product',
 		);
 
 		//Create Product
 		$post_id = wp_insert_post($product);
+		
+		//Set Image for Product
+		set_post_thumbnail($post_id, $attachment_id);
 
 		//Set Terms
 		wp_set_object_terms($post_id, 'simple', 'product_type');
