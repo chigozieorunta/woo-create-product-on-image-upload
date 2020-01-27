@@ -17,9 +17,9 @@ define("WCPOIU", plugin_dir_path(__FILE__));
 wooCreateProductOnImageUpload::getInstance();
 
 /**
- * Class wooHideOrderAddressDetails
+ * Class wooCreateProductOnImageUpload
  */
-class wooCreateImageOnUpload {
+class wooCreateProductOnImageUpload {
     /**
 	 * Constructor
 	 *
