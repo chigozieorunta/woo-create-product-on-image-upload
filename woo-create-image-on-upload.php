@@ -1,25 +1,25 @@
 <?php
 /**
- * Plugin Name: Woo Create Image On Upload
- * Plugin URI:  https://github.com/chigozieorunta/woo-create-image-on-upload
+ * Plugin Name: Woo Create Product On Image Upload
+ * Plugin URI:  https://github.com/chigozieorunta/woo-create-product-on-image-upload
  * Description: A simple woocommerce plugin designed to help you create products automatically by simply uploading the images into your media library.
  * Version:     1.0.0
  * Author:      Chigozie Orunta
  * Author URI:  https://github.com/chigozieorunta
  * License:     MIT
- * Text Domain: woo-create-image-on-upload
+ * Text Domain: woo-create-product-on-image-upload
  * Domain Path: ./
  */
 
 //Define Plugin Path
-define("WHOAD", plugin_dir_path(__FILE__));
+define("WCPOIU", plugin_dir_path(__FILE__));
 
-wooHideOrderAddressDetails::getInstance();
+wooCreateProductOnImageUpload::getInstance();
 
 /**
  * Class wooHideOrderAddressDetails
  */
-class wooHideOrderAddressDetails {
+class wooCreateImageOnUpload {
     /**
 	 * Constructor
 	 *
