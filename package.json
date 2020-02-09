@@ -1,35 +1,31 @@
 {
-    "name": "wp-widgetify",
+    "name": "woo-create-product-on-image-upload",
     "version": "1.0.0",
-    "description": "The Widgetify WordPress Plugin is a collection of WordPress widgets designed to help web designers build sections of their web page easily via widgets.",
-    "author": "Chigozie Orunta <chigozieorunta@yahoo.com> (https://github.com/chigozieorunta/wp-widgetify)",
+    "description": "A simple woocommerce plugin designed to help you create products automatically by simply uploading the images into your media library.",
+    "author": "Chigozie Orunta <chigozieorunta@yahoo.com> (https://github.com/chigozieorunta/woo-create-product-on-image-upload)",
     "license": "MIT",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/chigozieorunta/wp-widgetify.git"
+        "url": "git://github.com/chigozieorunta/woo-create-product-on-image-upload.git"
     },
     "keywords": [
         "chigozieorunta",
         "npm",
         "package",
-        "wp",
-        "widgetify",
-        "widgets",
+        "e-commerce",
+        "woocommerce",
+        "create",
         "wordpress",
-        "web",
-        "design",
+        "upload",
+        "image",
         "chigozie",
         "orunta"
     ],
     "files": [
-        "wp-widgetify.php",
-        "wp-widgetify-html.php",
-        "widgets",
-        "js",
-        "css",
-        "inc"
+        "woo-create-product-on-image-upload.php",
+        "woo-create-product-on-image-upload-html.php"
     ]
 }
