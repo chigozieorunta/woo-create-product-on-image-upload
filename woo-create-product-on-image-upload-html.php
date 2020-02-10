@@ -22,8 +22,10 @@
 		    <div class="about-wrap-content">
             	<div class="feature-section four-col">
             		<div class="col">
-            			<h3>widgetify-banner</h3>
-            			<p>The banner helps you create a banner with a background picture that cuts across the full width of the screen.</p>
+                        <form method="post" action="options.php">
+                        <?php settings_fields( 'myplugin_options_group' ); ?>
+                        <input type="text" id="myplugin_option_name" name="myplugin_option_name" value="<?php echo get_option('myplugin_option_name'); ?>" />
+                        <?php submit_button(); ?>
             		</div>
             		<div class="col">
             			<h3>widgetify-blog-group</h3>
