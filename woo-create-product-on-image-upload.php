@@ -26,6 +26,8 @@ class wooCreateProductOnImageUpload {
 	 * @since  1.0.0
 	 */
     public function __construct() {
+        add_action('admin_menu', array(get_called_class(), 'registerMenu'));
+		add_action("admin_init", array(get_called_class(), 'wcpoiu_fields'));
 		add_action('add_attachment', array($this, 'createProductOnImageUpload'), 10, 1);
     }
 	
@@ -89,6 +91,49 @@ class wooCreateProductOnImageUpload {
         if($instance === null) $instance = new self();
         return $instance;
     }
-}
+	
+	/**
+	 * Register Menu Method
+	 *
+     * @access public 
+	 * @since  1.0.0
+	 */
+    public static function registerMenu() {
+        add_menu_page(
+            'Woo Create Product', 
+            'Woo Create Product', 
+            'manage_options', 
+            'Woo Create Product', 
+            array(get_called_class(), 'registerHTML')
+        );
+    }
+	
+	/**
+	 * Register HTML Method
+	 *
+     * @access public
+	 * @since  1.0.0
+	 */
+    public static function registerHTML() {
+        require_once('woo-create-product-on-image-upload-html.php');
+    }
+	
+	/**
+	 * Fields Method
+	 *
+     * @access public 
+	 * @since  1.0.0
+	 */
+	public static function wcpoiu_fields() {
+		add_settings_section("wcpoiu", "", null, "wcpoiu-options");
+		add_settings_field("wcpoiu_product_name", "Product Name", "wcpoiu_product_name", "wcpoiu-options", "wcpoiu");
+		register_setting("wcpoiu", "wcpoiu_product_name");
+	}
 
+	public function wcpoiu_product_name() {
+	?>
+		<input type="text" id="wcpoiu_product_name" name="wcpoiu_product_name" value="<?php echo get_option('wcpoiu_product_name'); ?>" />
+	<?php
+	}
+}
 ?>
