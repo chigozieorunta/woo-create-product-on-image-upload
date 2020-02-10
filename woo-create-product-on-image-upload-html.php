@@ -23,22 +23,12 @@
             	<div class="feature-section four-col">
             		<div class="col">
                         <form method="post" action="options.php">
-                        <?php settings_fields( 'myplugin_options_group' ); ?>
-                        <input type="text" id="myplugin_option_name" name="myplugin_option_name" value="<?php echo get_option('myplugin_option_name'); ?>" />
-                        <?php submit_button(); ?>
+                            <?php settings_fields('wcpoiu'); ?>
+                            <input type="text" id="wcpoiu_product_name" name="wcpoiu_product_name" value="<?php echo get_option('wcpoiu_product_name'); ?>" />
+                            <?php submit_button(); ?>
+                        </form>
             		</div>
-            		<div class="col">
-            			<h3>widgetify-blog-group</h3>
-            			<p>The blog group helps you create a blog group in two variants (portrait & landscape).</p>
-            		</div>
-            		<div class="col">
-            			<h3>widgetify-contact-form</h3>
-            			<p>The contact form helps you create a basic contact form that submits to an email.</p>
-            		</div>
-            		<div class="col">
-            			<h3>widgetify-content-box</h3>
-            			<p>The content box helps you create a content area with title, text and associated image.</p>
-            		</div>
+                    
             	</div>
             </div>
         </div>
