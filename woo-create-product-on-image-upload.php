@@ -125,7 +125,7 @@ class wooCreateProductOnImageUpload {
 	 * @since  1.0.0
 	 */
 	public static function wcpoiu_fields() {
-		add_settings_section("wcpoiu", "", null, "wcpoiu-options");
+		add_settings_section("wcpoiu", "Settings", null, "wcpoiu-options");
 		add_settings_field("wcpoiu_product_name", "Product Name", "wcpoiu_product_name", "wcpoiu-options", "wcpoiu");
 		register_setting("wcpoiu", "wcpoiu_product_name");
 	}
